@@ -19,10 +19,11 @@ app.get('/beers', (req, res) => {
   punkAPI
     .getBeers()
     .then(beersFromApi => {
-      res.send({ beersFromApi });
+      res.render("beers",{ beersFromApi });
     })
     .catch(error => console.log(error));
 });
+
 // Add the route handlers here:
 
 app.get('/', (req, res) => {
